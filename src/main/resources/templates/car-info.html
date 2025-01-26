@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/head}">
+
+</head>
+<body th:object="${carDto}" >
+<nav th:replace="~{fragments/navbar}">
+</nav>
+<!-- Section Main-->
+<div  class="car-info-name">
+  <h1 th:text="${carDto.getCarMaker()} + ' ' + ${carDto.getCarModel()}"></h1>
+</div>
+<div  class="description-info" th:style="
+'background-image: linear-gradient(to left,
+    rgba(0,0,0,0) 30%,
+    rgba(17,10,60,0.9) 50%),
+    url(' + ${carDto.getMainPhotoUrl()} + ');'
+     ">
+  <h1>Starting price:</h1>
+  <h1 id="price" th:text="'$'+${carDto.getDailyRentPrice()}+'/day'"></h1>
+  <h2>100 km per day covered,</h2>
+  <h2>$20 dollars per km above,</h2>
+  <h2>1 Rental day = 24 hours</h2>
+  <div class="stats">
+    <h1 id="price" th:text="${carDto.getAcceleration()}+'s'"></h1>
+    <p>(0-60)</p>
+  </div>
+  <div class="stats2">
+    <h1 id="price" th:text="${carDto.getHp()}+'hp'"></h1>
+     </div>
+  <li class="rent-button">
+    <a  th:href="@{/cars/rent/{id}(id=${carDto.getId()})}" class="button">Rent</a>
+  </li>
+
+</div>
+
+<div class="myInfo">
+<!--  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>-->
+
+  <p>Introducing the <b>Ferrari 488 Spider</b> rental Miami, where leisurely driving meets powerful motor performance in a way that is so effortless but yet breathtaking. Ferrari surely knows how to bring extreme pleasure and excitement to drop top driving that keeps exceeding our every expectation and beyond every time they have a new release. The Ferrari 488 Spider is definitely something to rave about for sure. Every aspect of this car is phenomenal from the retractable hard top roof to the powerful V8 engine; the entire design of the Spider has set high benchmarks in the sports cars sector. The 488 Spider is so powerful and probably the most innovative one ever built yet. Just when we thought that the 488 GTB was hard to beat, Ferrari had to hit the industry with its successor, the 488 Spider.</p>
+  <p> This car combines the power of the <b>V8</b> that is found in the Ferrari 488 GTB with the perks of being able to easily tackle bends while taking in the scenery with the roof top down and of course accompanied by the amazing sound of the Ferrari engine, which to any Ferrari freak is music to ones ears.</p>
+
+  <p>The extraordinary vibrations when turning on the car is the result of a <b>3.9L Turbo charged V8</b> that allows the driver to have an experience in this vehicle like no other, giving you a smooth transition and torque delivery as the gears are shifted higher and higher resulting in maximum output of power and speed when behind the wheel of this amazing vehicle.</p>
+  <p> If you have a knack for speed, then surely a vehicle that is able to go from <b>0-60 mph in 3.0 seconds</b> and the ability to go to <b>124 mph in 8.7 seconds</b> is a pretty impressive performance – which is what the Ferrari 488 Spider is able to deliver. With a flashy exterior that is custom to any Ferrari vehicle, to the identical powerful performance of the GTB and the perk of driving down the streets with the wind in your hair, the 488 Spider is like no other car that we have seen, which gives you the thrill like you are behind the wheel of a Formula 1 race car. When Ferrari decides to make something great, always expect greater to follow, and the Ferrari 488 Spider rental is the perfect example of how this vehicle really feels to drive!</p>
+
+  <ul class="car-int-ul">
+    <li>
+      <img th:src="${carDto.getSecondary_url1()}" style="width: 350px; height: 250px;" alt="">
+    </li>
+    <li>
+      <img th:src="${carDto.getSecondaryUrl3()}" style="width: 350px; height: 250px;" alt="">
+    </li>
+    <li>
+      <img th:src="${carDto.getSecondaryUrl2()}" style="width: 350px; height: 250px;" alt="">
+    </li>
+    <li>
+      <img th:src="${carDto.getSecondaryUrl4()}" style="width: 350px; height: 250px;" alt="">
+    </li>
+  </ul>
+
+  <ul class="car-int-ul2">
+    <li class="mynii">
+      <h1>top speed</h1>
+      <img src="../images/speedometer.webp" style="width: 60px; height: 60px;" alt="">
+    </li>
+    <li class="mynii">
+      <h1>20 cty/14 hwy</h1>
+      <img src="../images/gas.webp" style="width: 60px; height: 60px;" alt="">
+    </li>
+    <li class="mynii">
+      <h1> 7 speed auto</h1>
+      <img src="https://cdn.pixabay.com/photo/2014/04/02/10/44/gear-wheel-304395_1280.png" style="width: 60px; height: 60px;" alt="">
+    </li>
+    <li class="mynii">
+      <h1>2 seater</h1>
+      <img src="https://thumbs.dreamstime.com/z/print-178282764.jpg?w=768" style="width: 80px; height: 80px;" alt="">
+    </li>
+
+  </ul>
+</div>
+</body>
+<!--Footer-->
+<footer th:replace="~{fragments/footer}"></footer>
+
+</html>

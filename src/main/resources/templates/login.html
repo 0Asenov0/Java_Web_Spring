@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/head}">
+
+</head>
+<body>
+<nav th:replace="~{fragments/navbar}">
+</nav>
+<!-- Section Main-->
+<div class="mainsss">
+    <div id="login-container">
+        <div class="form-wrap">
+
+            <p th:if="${bad_credentials}" class="alert-danger"
+               th:text="'Incorrect email or password'">
+            </p>
+
+            <h1>Login</h1>
+
+        <form  th:action="@{/user/login}" th:method="POST" ><!--    th:object="${user}"-->
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email"
+                           th:value="${email}"
+                           id="email"
+                           name ="email"
+                           placeholder="Email">
+                </div>
+<!--                <div th:if="${#fields.hasErrors('email')}"-->
+<!--                     th:errors="*{email}" class="text-danger"></div>-->
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password"
+                           id="password"
+                           name="password"
+                           placeholder="Enter Password">
+                </div>
+
+                <button type="submit">Login</button>
+               <div>
+              </div>
+
+
+                <!--
+                     <input type="submit" value="Submit">
+                -->
+
+            </form>
+            <!--FORM CLOSE-->
+            <p class="bottom-text">Don't have account? <a th:href="@{/user/register}">Sign Up Here</a></p>
+        </div>
+        <!--FORM WRAP CLOSE-->
+    </div>
+    <!-- SERVICE SECTION-->
+</div>
+</body>
+<!--Footer-->
+<footer th:replace="~{fragments/footer}"></footer>
+</html>

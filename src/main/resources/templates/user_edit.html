@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/head}">
+
+</head>
+<body>
+<nav th:replace="~{fragments/navbar}">
+</nav>
+<!-- Section Main-->
+<div class="mainsss">
+    <div id="login-container">
+        <div class="form-wrap">
+
+            <h1>User Profile Changes</h1>
+            <form  th:action="@{/user/{userId}/edit(userId=${user_info.id})}" th:method="POST" th:object="${user_info}" ><!--    th:object="${user}"-->
+                <label for="firstName">FirstName</label>
+                <input type="text"
+                       id="firstName"
+                       name="firstName"
+                       th:value="*{firstName}"
+                       placeholder="First name"/>
+
+                <label for="role">Role</label>
+                <select id="role"
+                        th:name="role"
+                        th:field="*{role}"
+                        th:errorclass="is-invalid"
+                        class="form-control">
+                    <option value="">- Select ROlE TYPE -</option>
+                    <option th:each="e : ${roles}"
+                            th:text="${e}"
+                            th:value="${e}"
+                            th:selected="${e} == *{role}">
+                    </option>
+                </select>
+
+
+        <div class="form-group">
+            <label for="LastName">LastName</label>
+            <input type="text"
+                   id="lastName"
+                   name="lastName"
+                   th:value="*{lastName}"
+                   placeholder="Last name"/>
+
+        </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email"
+                           th:value="*{email}"
+                           id="email"
+                           name ="email"
+                           placeholder="Email">
+                </div>
+
+                <button type="submit">Submit Changes</button>
+                <div>
+                </div>
+
+
+                <!--
+                     <input type="submit" value="Submit">
+                -->
+
+            </form>
+            <!--FORM CLOSE-->
+
+        </div>
+        <!--FORM WRAP CLOSE-->
+    </div>
+    <!-- SERVICE SECTION-->
+</div>
+</body>
+<!--Footer-->
+<footer th:replace="~{fragments/footer}"></footer>
+</html>

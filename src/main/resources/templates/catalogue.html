@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/head}">
+
+</head>
+<body>
+<nav th:replace="~{fragments/navbar}">
+</nav>
+
+<!-- SERVICE SECTION-->
+<main>
+<div  class="services">
+    <h1>Choose from our wide variety of cars</h1>
+    <div  class="services_container">
+        <div th:each="car :${listOfCars}" class="services_card" th:style="'background-image: linear-gradient(to top,rgba(0,0,0,0) 0%,rgba(17,10,60,0.9) 100%),url('+ ${car.getMainPhotoUrl()} + ');'"  >
+            <h1 th:text="${car.getCarMaker()}+' ' +${car.getCarModel()}"></h1>
+            <h2 th:text="${car.getCatchPhrase()}">V10 </h2>
+            <p th:text="${car.getIntroduction()}"></p>
+            <button> <a th:href="@{/catalogue/{id}(id=${car.getId()})}">See more</a></button>
+        </div>
+
+    </div>
+</div>
+</main>
+<footer th:include="~{fragments/footer}"></footer>
+</body>
+<!--Footer-->
+
+
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/head}">
+
+</head>
+<body>
+<nav th:replace="~{fragments/navbar}">
+</nav>
+<!-- Section Main-->
+<div class="mainsss">
+  <div id="login-container">
+    <div class="form-wrap" id="signUP">
+      <h1>Sign Up</h1>
+
+      <form th:method="POST" th:action="@{/user/register}" th:object="${user}">
+        <div class="form-group">
+          <p th:if="${already_exists}" class="alert-danger"
+             th:text="'Email is in use'">
+          </p>
+          <p th:if="${passwordNotMatching}" class="alert-danger"
+             th:text="'Passwords do not match'">
+          </p>
+          <label for="firstName">FirstName</label>
+          <input type="text"
+                 id="firstName"
+                 name="firstName"
+                 th:value="${user.firstName}"
+                  placeholder="First name"/>
+          <small th:if="${#fields.hasErrors('firstName')}"
+                 th:errors="*{firstName}"  class="alert-danger">Email error message</small>
+        </div>
+
+        <div class="form-group">
+          <label for="LastName">LastName</label>
+          <input type="text"
+                 id="lastName"
+                 name="lastName"
+                 th:value="${user.lastName}"
+                 placeholder="Last name"/>
+           <small th:if="${#fields.hasErrors('lastName')}"
+                 th:errors="*{lastName}"  class="alert-danger">Email error message</small>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email"
+                 id="email"
+                 name ="email"
+                 th:value="${user.email}"
+                 placeholder="Email">
+          <small th:if="${#fields.hasErrors('email')}"
+                 th:errors="*{email}"  class="alert-danger">Email error message</small>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password"
+                 id="password"
+                 name="password"
+                 placeholder="Password"/>
+          <small th:if="${#fields.hasErrors('password')}"
+                 th:errors="*{password}"  class="alert-danger">Email error message</small>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">ConfirmPassword</label>
+          <input type="password"
+                 id="confirmPassword"
+                 name="confirmPassword"
+                 placeholder="Confirm password"/>
+          <small th:if="${#fields.hasErrors('confirmPassword')}"
+                 th:errors="*{confirmPassword}"  class="alert-danger">Email error message</small>
+        </div>
+
+        <button type="submit" >Submit</button>
+        <p class="bottom-text">By clicking th Submit button, you agree to our
+          <a  href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></p>
+      </form>
+      <!--FORM CLOSE-->
+      <p class="bottom-text">Already registered? <a  th:href="@{/user/login}">Login Here</a></p>
+    </div>
+    <!--FORM WRAP CLOSE-->
+  </div>
+</div>
+<!-- SERVICE SECTION-->
+
+</body>
+<!--Footer-->
+
+<footer th:replace="~{fragments/footer}"></footer>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/head}">
+
+</head>
+<body>
+<nav th:replace="~{fragments/navbar}">
+</nav>
+<!-- Section Main-->
+<div class="mainsss">
+    <div id="carAdd-container">
+        <div class="form-wrap">
+            <h1>Add automobile</h1>
+            <form th:method="POST" th:action="@{/catalogue/add/auto}">
+                <div class="part1">
+               <div class="form-group">
+                    <label for="carMaker">Brand</label>
+                    <input type="text"
+                           id="carMaker"
+                           name="carMaker">
+                </div>
+
+                <div class="form-group">
+                    <label for="carModel">Model</label>
+                    <input type="text"
+                           id="carModel"
+                           name="carModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="carModel">Model</label>
+                    <input type="text"
+                           id="carType"
+                           name="carType">
+                </div>
+
+                <div class="form-group">
+                    <label for="url">Email</label>
+                    <input type="text" id="url" name ="url">
+                </div>
+
+                </div>
+                <div class="group-part2">
+                <div class="form-group">
+                    <label for="acceleration">Acceleration</label>
+                    <input type="text"
+                           id="acceleration"
+                           name="acceleration">
+                </div>
+                <div class="form-group">
+                    <label for="powerTrain">PowerTrain</label>
+                    <select
+                            id="powerTrain"
+                            th:name="powerTrain">
+                        <option value="">- Select transmission type -</option>
+                        <option th:each="t : ${T(com.kursova.demo.enums.PowertrainEnum).values()}"
+                                th:text="${t}"
+                                th:value="${t}">
+
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="hp">Hp</label>
+                    <input type="text"
+                           id="hp"
+                           name="hp">
+                </div>
+
+                <div class="form-group">
+                    <label for="dailyRentPrice">Price</label>
+                    <input type="text"
+                           id="dailyRentPrice"
+                           name="dailyRentPrice">
+                </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="catchPhrase">CatchPhrase</label>
+                    <input type="text"
+                           id="catchPhrase"
+                           name="catchPhrase">
+                </div>
+
+<!--                //    private String secondary_url1;-->
+<!--                //    private String secondaryUrl2;-->
+<!--                //    private String secondaryUrl3;-->
+<!--                //    private String secondaryUrl4;-->
+
+                <div class="form-group">
+                    <label for="mainPhotoUrl">Main Photo URL</label>
+                    <input type="text"
+                           id="mainPhotoUrl"
+                           name="mainPhotoUrl">
+                </div>
+
+                <div class="form-group">
+                    <label for="introduction">Introduction</label>
+                    <input type="text"
+                           id="introduction"
+                           name="introduction">
+                </div>
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                    <input type="text"
+                           id="description"
+                           name="description">
+                    </div>
+
+
+                <button type="submit" >Submit</button>
+                <p class="bottom-text">By clicking th Submit button, you agree to our
+                    <a  href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></p>
+            </form>
+            <!--FORM CLOSE-->
+            <p class="bottom-text">Already registered? <a  th:href="@{/user/login}">Login Here</a></p>
+        </div>
+        <!--FORM WRAP CLOSE-->
+    </div>
+</div>
+<!-- SERVICE SECTION-->
+
+</body>
+<!--Footer-->
+
+<footer th:replace="~{fragments/footer}"></footer>
+
+</html>

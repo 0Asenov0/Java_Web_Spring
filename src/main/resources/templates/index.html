@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/head}">
+
+</head>
+<body>
+<nav th:replace="~{fragments/navbar}">
+
+</nav>
+<!-- Section Main-->
+<div class="main">
+
+    <div class="main_container" >
+        <div class="main_content"  >
+
+            <h1>The unforgetable driving experience</h1>
+            <h2>Chose from our wide variety of exotic autos you can rent from us</h2>
+
+            <button class="main_btn">
+                <a th:href="@{/catalogue}">To our catalogue</a>
+            </button>
+
+        </div>
+    </div>
+</div>
+
+<!-- SERVICE SECTION-->
+
+<div class="services">
+    <h1 class="service-header">Mostly preferred</h1>
+    <div  class="services_container">
+        <div  th:each="car : ${preferredCars.getContent()}"
+              th:object="${car}" class="services_card" th:style="'background-image: linear-gradient(to top,rgba(0,0,0,0) 0%,rgba(17,10,60,0.9) 100%),url('+ ${car.getMainPhotoUrl()} + ');'"  >
+            <h1 th:text="${car.getCarMaker()}+' ' +${car.getCarModel()}"></h1>
+            <h2 th:text="${car.getCatchPhrase()}">V10 </h2>
+            <p th:text="${car.getIntroduction()}"></p>
+            <button> <a th:href="@{/catalogue/{id}(id=${car.getId()})}">See more</a></button>
+        </div>
+
+
+
+
+    </div>
+</div>
+</body>
+<!--Footer-->
+<footer th:replace="~{fragments/footer}"></footer>
+
+</html>
