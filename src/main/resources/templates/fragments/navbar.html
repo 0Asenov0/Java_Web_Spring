@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:sec='http://www.thymeleaf.org/extras/spring-security'>>
+      xmlns:sec='http://www.thymeleaf.org/extras/spring-security'>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -9,8 +9,8 @@
 <nav th:fragment="navbar" class="navbar">
     <div class="navbar_container">
           <div class="brand-name-logo">
-        <a href="/" id="navbar_logo">DriveTime</a>
-        <img src="../images/Logo.png" alt="image" class="nav_img">
+        <a href="/" id="navbar_name">DriveTime</a>
+        <!--<img src="../images/Logo.png" alt="image" class="nav_img">-->
               </div>
         <div class="navbar_toggle" id="mobile-menu">
             <span class="bar"></span>
@@ -28,7 +28,7 @@
                     <li  class="navbar_item"><a href="/" class="navbar_links">Edit Profiles</a></li>
                     <li class="navbar_item" ><a th:href="@{/catalogue/add/auto}" class="navbar_links">Edit CarRentListing</a></li>
                 </ul>
-            <li  class="navbar_item" >
+            <li  class="navbar_item">
                 <a th:href="@{/catalogue}" class="navbar_links" >Catalogue</a>
             </li>
             <li sec:authorize="isAuthenticated()" class="navbar_item">
