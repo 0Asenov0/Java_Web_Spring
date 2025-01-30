@@ -11,6 +11,6 @@ public class AdminController {
 
     @GetMapping("/carEdit")
     public String editCar(){
-         return "register";
+         return "sign-up";
     }
 }

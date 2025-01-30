@@ -37,13 +37,13 @@ public class UserController {
 
     @GetMapping("/register")
     public ModelAndView userRegister(@ModelAttribute("user") UserRegisterDto userRegisterDto) {
-        return new ModelAndView("register");
+        return new ModelAndView("sign-up");
     }
 
     @PostMapping("/register")
     public ModelAndView userRegister(@Valid @ModelAttribute("user") UserRegisterDto userRegisterDto,
                                      BindingResult bindingResult) {
-        ModelAndView model = new ModelAndView("register");
+        ModelAndView model = new ModelAndView("sign-up");
         if (bindingResult.hasErrors()) {
             return model;
         }

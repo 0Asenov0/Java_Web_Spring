@@ -11,7 +11,7 @@
     top: 0;
     z-index: 999;
     width: 100%;
-    border-bottom: 4px solid #e9e91b;
+    border-bottom: 4px solid  #ffc200;
 }
 
 /* Navbar Container */
@@ -66,17 +66,17 @@
 
 /* Hover Effect */
  .navbar_btn .button:hover, .logout_btn:hover, .logout_btn:hover {
-    background: #0ad30a;
-    color: white;
+    background: #ffc200;
+    color: black;
 }
 .navbar_links:hover {
-    color: #e9e91b;
+    color: #ffc200;
     font-size: 1.5rem;
     transition: all 0.3s ease-in-out;
 
 }
 .navbar_btn .button {
-    color: #e9e91b;
+    color: #ffc200;
     background: #525925;
     display: flex;
     align-items: center;
@@ -89,14 +89,13 @@
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
     font-weight: 500;
-    border: 2px solid #e9e91b;
+    border: 2px solid #ffc200;
 }
 /* Logout Button */
 .logout_btn{
     color: black;
     font-size: 1.2rem;
     background: red;
-    border: 2px solid #e9e91b;
     border-radius: 5px;
     padding: 10px 15px;
     cursor: pointer;
