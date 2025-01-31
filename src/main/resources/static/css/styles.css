@@ -296,13 +296,25 @@ color:black
 /*------------------FOOTER---------------------------------*/
 
 /*------------------LOGIN PAGE------------------------------*/
-
-.description-info{
-    background-color: black;
-    display: block;
+.description-main-container {
     height: 90vh;
-    background-size:cover;
-    background-position-y: -100px;
+}
+.description-info {
+    /*background-color: black;
+    */
+display: table-cell;
+    /* height: 90vh; */
+    align-items: center;
+    text-align: center;
+    padding-left: 90px;
+}
+
+button#rent {
+    background: transparent;
+    border: none;
+}
+buton#rent a {
+    width: 150px;
 }
 .main-info p{
     color:white;
@@ -382,10 +394,16 @@ color:black
 
 
 /*--------------CAR_INFO-------------------------------*/
-.car-info-name{
+.car-info-name {
     position: relative;
-    background: chartreuse;
     text-align: center;
+    background: rgb(0, 0, 0, 0.3);
+    height: 90px;
+}
+.car-info-name h1{
+    color: #ffc200;
+    padding: 10px;
+    font-size: xxx-large;
 }
 
 .description-info{

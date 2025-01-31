@@ -7,15 +7,14 @@
 <nav th:replace="~{fragments/navbar}">
 </nav>
 <!-- Section Main-->
-<div  class="car-info-name">
-  <h1 th:text="${carDto.getCarMaker()} + ' ' + ${carDto.getCarModel()}"></h1>
-</div>
-<div  class="description-info" th:style="
-'background-image: linear-gradient(to left,
-    rgba(0,0,0,0) 30%,
-    rgba(17,10,60,0.9) 50%),
-    url(' + ${carDto.getMainPhotoUrl()} + ');'
+
+<div  class="description-main-container" th:style="
+'background-image: linear-gradient(to left, rgba(0 , 0, 0, 0) 38%, rgb(82, 89, 37, 0.8) 59%),url(/' + ${carDto.getMainPhotoUrl()} + ');background-size: auto; }'
      ">
+  <div  class="car-info-name">
+    <h1 th:text="${carDto.getCarMaker()} + ' ' + ${carDto.getCarModel()}"></h1>
+  </div>
+  <div class="description-info">
   <h1>Starting price:</h1>
   <h1 id="price" th:text="'$'+${carDto.getDailyRentPrice()}+'/day'"></h1>
   <h2>100 km per day covered,</h2>
@@ -28,9 +27,10 @@
   <div class="stats2">
     <h1 id="price" th:text="${carDto.getHp()}+'hp'"></h1>
      </div>
-  <li class="rent-button">
+  <button class="navbar_btn" id="rent">
     <a  th:href="@{/cars/rent/{id}(id=${carDto.getId()})}" class="button">Rent</a>
-  </li>
+  </button>
+  </div>
 
 </div>
 
@@ -73,7 +73,7 @@
     </li>
     <li class="mynii">
       <h1>2 seater</h1>
-      <img src="https://thumbs.dreamstime.com/z/print-178282764.jpg?w=768" style="width: 80px; height: 80px;" alt="">
+      <img src="https://thumbs.dreamstime.com/z/print-178282764.jpg?w=768" style="width: 60px;height: 58px;border-radius: 10px;margin-bottom: 9%;" alt="">
     </li>
 
   </ul>

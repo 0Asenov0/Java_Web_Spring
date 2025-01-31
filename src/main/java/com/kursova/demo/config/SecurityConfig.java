@@ -18,10 +18,11 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
     @Bean
-    public UserDetailsService userDetailsService(UserRepository userRepository){
+    public UserDetailsService userDetailsService(UserRepository userRepository) {
         return new DetailsUserServ(userRepository);
 
     }
+
     @Bean
     public static PasswordEncoder passwordEncoder() {
         return Pbkdf2PasswordEncoder.defaultsForSpringSecurity_v5_8();
@@ -29,37 +30,28 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
-        return  httpSecurity.authorizeHttpRequests(
-                //Define which urls are visible by users
-                authorizeRequest ->   authorizeRequest
+        return httpSecurity
+                .authorizeHttpRequests(authorizeRequest -> authorizeRequest
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                         .requestMatchers("/static/**", "/css/**", "/img/**").permitAll()
-                        .requestMatchers("/","/user/login","/user/register","/user/failure","/user/edit","/maintenance").permitAll()
-                        .requestMatchers(HttpMethod.GET,"/catalogue").permitAll()
+                        .requestMatchers("/", "/user/login", "/user/register", "/user/failure", "/user/edit", "/maintenance").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/catalogue").permitAll()
                         .requestMatchers("/admin/**").hasRole(UserRoleEnum.ADMIN.name())
                         .requestMatchers("/error").permitAll()
                         .anyRequest().authenticated())
-                .formLogin(formLogin->{
-            formLogin
-                    .loginPage("/user/login")
-                    .usernameParameter("email")
-                    .passwordParameter("password")
-                    .defaultSuccessUrl("/")
-                    .failureForwardUrl("/user/failure");
-
-        })
-                .logout(
-                        logout -> {
-                            logout
-                                   .logoutUrl("/user/logout")
-                                    .logoutSuccessUrl("/")
-                                    .invalidateHttpSession(true)
-                                    .deleteCookies("JSESSIONID");
-                        }
-                ).build();
-
-
-        }
-
-
+                .formLogin(formLogin -> formLogin
+                        .loginPage("/user/login")
+                        .passwordParameter("password")
+                        .usernameParameter("email")
+                        .successHandler((request, response, authentication) -> {
+                            response.sendRedirect("/");  // Force redirect to home page after login
+                        })
+                        .failureForwardUrl("/user/failure"))
+                .logout(logout -> logout
+                        .logoutUrl("/user/logout")
+                        .logoutSuccessUrl("/")
+                        .invalidateHttpSession(true)
+                        .deleteCookies("JSESSIONID"))
+                .build();
+    }
 }
