@@ -63,8 +63,39 @@
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
 }
+#dropdown a:hover {
+    background: black;
+    color: #ffc200;
+}
+#dropdown {
+    border: 2px solid #ffc200;
+    background: #b1b1b1;
+    color: black;
+}
+ul li ul {
+    visibility: hidden;
+    /*opacity: 0;*/
+    position: absolute;
+    display: none;
+    background: #100909;
+    margin-left:-0.8%
+}
+ul li:hover > ul,
+ul li ul:hover {
+    visibility: visible;
+    display: block;
+    max-width: 100px;
+    margin-top: 100px;
+    align-content: center;
+    text-align: center;
+    /* border-radius: 8px; */
+    background-color: rgb(0 0 0 / 34%);
+    border: 2px solid #e3640b;
+    margin-left: 2px;
+    margin-top: -47px;
+    padding-top: 50px;
+}
 
-/* Hover Effect */
  .navbar_btn .button:hover, .logout_btn:hover, .logout_btn:hover {
     background: #ffc200;
     color: black;
