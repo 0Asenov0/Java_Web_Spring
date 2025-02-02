@@ -19,7 +19,7 @@ public class Mapping {
     public static UserRoleEntity mapToUserRoleEntity(UserProfileInfoDTO userProfileInfoDTO){
 
         UserRoleEntity userRoleEntity = new UserRoleEntity();
-        if(userProfileInfoDTO.getRole().equals("ADMIN")) {
+        if(userProfileInfoDTO.getRole().name().equals("ADMIN")) {
             userRoleEntity.setId(1L);
         }
         else{

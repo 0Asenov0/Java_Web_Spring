@@ -6,10 +6,6 @@ body {
     padding: 3rem;
 }
 
-/*.user-card-full {*/
-/*    overflow: hidden;*/
-/*}*/
-
 .card {
     background: #332727;
     color: white;
@@ -21,6 +17,21 @@ body {
     max-width: 500px;
     opacity: 90%;
     border-radius: 20px;
+}
+a.user-edit-button{
+text-decoration: none;
+background: red;
+padding: 5px 40px;
+border-radius: 10px;
+text-align: center;
+margin: 11%;
+color: black;
+font-weight: 500;
+}
+a.user-edit-button:hover{
+background: black;
+    color: red;
+    transition: auto 0.3s ease-in-out;
 }
 input#firstName {
     display: flex;

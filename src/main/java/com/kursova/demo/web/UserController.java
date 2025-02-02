@@ -103,32 +103,8 @@ public class UserController {
         }
             return"redirect:/";
         }
-//    @PostMapping("/activate/{activation_code}")
-//    public String activateUser(@PathVariable("activation_code") String activationCode,Model model){
-//       boolean state =  userActivationService.setActivationStatus(activationCode);
-//
-//       if(state){
-//           model.addAttribute("successfullActivation",true);
-//       }
-//       return"redirect:/";
-//
-//    }
-
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

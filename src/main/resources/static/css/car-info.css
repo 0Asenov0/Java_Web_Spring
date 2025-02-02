@@ -1,0 +1,113 @@
+.car-info-name {
+    position: relative;
+    text-align: center;
+    background: rgb(0, 0, 0, 0.3);
+    height: 90px;
+}
+.car-info-name h1{
+    color: #ffc200;
+    padding: 10px;
+    font-size: xxx-large;
+}
+
+.description-info{
+    padding-top: 10%;
+    position: relative;
+
+
+}
+
+#myBtn{
+    border-radius: 40px;
+    position: sticky;
+    background-color: rgb(29, 117, 200);
+    color: #fff;
+    height: 40px;
+    width: 100px;
+    top: 10%;
+    cursor: pointer;
+    margin-left: 50%;
+}
+
+
+#myBtn:hover{
+    color: #000;
+    background-color: gold;
+}
+
+.description-info h1{
+    position: relative;
+    padding-left :10%;
+}
+.description-info h2{
+    position: relative;
+    padding-left :11%;
+    margin-top: -20px
+}
+.description-info p{
+    color: wheat;
+}
+#price{
+    margin-left :1.6%;
+    margin-bottom: 1%;
+    color: goldenrod;
+}
+.stats{
+
+
+    margin-left: 3%;
+}
+.stats2{
+
+    margin-top:1%;
+    margin-left: 1.5%;
+}
+.stats p{
+    padding-left: 11.8%;
+    margin-top:-2%;
+}
+.stats2 p{
+    padding-left: 12.5%;
+    margin-top:-2%;
+}
+.rent-button a{
+    position: relative;
+    justify-content: center;
+}
+.car-int-ul{
+    display: flex;
+    list-style: none;
+    text-align: center;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+.car-int-ul2{
+    display: flex;
+    list-style: none;
+    text-align: center;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+.mynii{
+
+    margin-left: 5%;
+}
+
+
+.myInfo{
+    background-color:#222;
+    padding-top: 1%;
+
+}
+.myInfo p{
+    color: wheat;
+    margin:1% 5% 2% 5%;
+}
+.car-int-ul li{
+    padding-left: 1%;
+}
+.car-int-ul h1{
+    color:wheat
+}
+
+.text-danger{color:#dc3545!important}a.text-danger:focus,a.text-danger:hover{color:#bd2130!important}

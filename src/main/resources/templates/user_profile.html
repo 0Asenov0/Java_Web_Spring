@@ -18,7 +18,7 @@
                                 </div>
                                 <h5 th:text="*{firstName} +' '+ *{lastName}" class="default">Hembo Tingor</h5>
 <!--                               <button class="user-edit-button">Edit</button>-->
-                                <a th:href="@{/user/{userId}/edit(userId=${userDetails.id})}" class="button">User Changes</a>
+                                <a th:href="@{/user/{userId}/edit(userId=${userDetails.id})}" class="user-edit-button">Edit</a>
                             </div>
                         </div>
                         <div class="col-sm-8">
