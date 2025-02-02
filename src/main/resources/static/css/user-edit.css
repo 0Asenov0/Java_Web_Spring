@@ -30,7 +30,7 @@ font-weight: 500;
 }
 a.user-edit-button:hover{
 background: black;
-    color: red;
+    color: green;
     transition: auto 0.3s ease-in-out;
 }
 input#firstName {
