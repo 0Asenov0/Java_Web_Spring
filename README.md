@@ -13,7 +13,7 @@
 - Browse available cars.
 - Rent cars from the available publications.
 
-### 🛠 Admin Features
+###  Admin Features
 - Secure admin login.
 - Create, update, and delete car rental publications.
 
