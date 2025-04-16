@@ -53,7 +53,7 @@ public class UserActivationServiceImpl implements UserActivationService {
     @Override
     public boolean setActivationStatus(String activationCode) {
        UserActivationCodeEntity userActivationCodeEntity = userActivationCodeRepository.findByActivationCode(activationCode);
-        if(!userActivationCodeEntity.equals(null)){
+        if(userActivationCodeEntity != null){
             UserEntity user = userRepository.findById(userActivationCodeEntity.getUser().getId()).get();
             user.setActive(true);
           //  userRepository.save(user);
